@@ -14,7 +14,7 @@ Extensions
 ------------------------------
 
 * **copy** Just copy a file (stream based)
-* **bulkCopy** Copy directories with multiple files/directories in once
+* **bulkCopy** Copy multiple files/directories in once
 * **mkdirp** Create directories recursivly
 * **exists** Custom `exists` function to test file existence
 * **isFile** Check if item is a file
@@ -24,6 +24,8 @@ Extensions
 * **isFileOfType** Check if item is of specific type
 * **FileInputStream** Open a new fileReadStream
 * **FileOutputStream** Write stream to destination file
+* **untar** Extracting `.tar` archives using **tar-stream**
+* **untgz** Extracting gzip compressed `.tar` archives
 
 General Usage
 ------------------------------
@@ -226,6 +228,44 @@ const response = _fetch('http://example.org/file.gz');
 
 // write stream content to file
 await _fOutoutStream(response.body, dst, mode);
+```
+
+fs-magic::untar
+---------------------------------
+
+Description: Extracts contents of a `.tar` archive into given directory using **tar-stream**
+
+Syntax: `untar(inputstream:stream, destinationDirectory:string)`
+
+Example:
+
+```js
+const _fetch = require('node-fetch');
+
+// fetch remote content
+const response = _fetch('http://example.org/file.tar');
+
+// unpack into currrent directory
+let items = await _fsm.untar(response.body, '.');
+```
+
+fs-magic::untgz
+---------------------------------
+
+Description: Extracts contents of a gzip compressed `.tar.gz` archive into given directory using **tar-stream**
+
+Syntax: `untgz(inputstream:stream, destinationDirectory:string)`
+
+Example:
+
+```js
+const _fetch = require('node-fetch');
+
+// fetch remote content
+const response = _fetch('http://example.org/file.tar.gz');
+
+// unpack into currrent directory
+let items = await _fsm.untgz(response.body, '.');
 ```
 
 Any Questions ? Report a Bug ? Enhancements ?

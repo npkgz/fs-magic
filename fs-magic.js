@@ -13,5 +13,7 @@ _fs.isFile = require('./lib/isFile');
 _fs.isSocket = require('./lib/isSocket');
 _fs.isSymlink = require('./lib/isSymlink');
 _fs.isFileOfType = require('./lib/isFileOfType');
+_fs.untar = require('./lib/untar');
+_fs.untgz = require('./lib/untgz');
 
 module.exports = _fs;
