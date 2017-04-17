@@ -1,6 +1,6 @@
 {
   "name": "fs-magic",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Advanced Filesystem Utilities and promisified fs base.",
   "keywords": [
     "fs",
@@ -31,5 +31,6 @@
   },
   "homepage": "https://github.com/AndiDittrich/Node.fs-magic",
   "bugs": "https://github.com/AndiDittrich/Node.fs-magic/issues",
-  "repository": "AndiDittrich/Node.fs-magic"
+  "repository": "AndiDittrich/Node.fs-magic",
+  "os" : ["linux" ,"darwin"]
 }
