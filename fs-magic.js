@@ -8,5 +8,10 @@ _fs.bulkCopy = require('./lib/bulkCopy');
 _fs.mkdirp = require('./lib/mkdirp');
 _fs.FileInputStream = require('./lib/FileInputStream');
 _fs.FileOutputStream = require('./lib/FileOutputStream');
+_fs.isDirectory = require('./lib/isDirectory');
+_fs.isFile = require('./lib/isFile');
+_fs.isSocket = require('./lib/isSocket');
+_fs.isSymlink = require('./lib/isSymlink');
+_fs.isFileOfType = require('./lib/isFileOfType');
 
 module.exports = _fs;

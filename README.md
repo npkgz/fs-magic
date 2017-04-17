@@ -17,6 +17,11 @@ Extensions
 * **bulkCopy** Copy directories with multiple files/directories in once
 * **mkdirp** Create directories recursivly
 * **exists** Custom `exists` function to test file existence
+* **isFile** Check if item is a file
+* **isDirectory** Check if item is a directory
+* **isSymlink** Check if item is a symlink
+* **isSocket** Check if item is a socket
+* **isFileOfType** Check if item is of specific type
 * **FileInputStream** Open a new fileReadStream
 * **FileOutputStream** Write stream to destination file
 
@@ -52,8 +57,8 @@ Syntax: `copy(sourcefile:string, destinationfile:string, mode:int=null)`
 Example:
 
 ```js
-    // copy a file, set chmod to 0640
-    await _fsm.copy('test1.js', 'test2.js', 0o640);
+// copy a file, set chmod to 0640
+await _fsm.copy('test1.js', 'test2.js', 0o640);
 ```
 
 
@@ -67,16 +72,16 @@ Syntax: `bulkCopy(srcset:Array, createDestinationDirs:boolean=true, defaultFilem
 Example:
 
 ```js
-    // list of files to copy
-    const srcset = [
-        ['source/file1.js', 'destination/subdir/file1.js', 0o644],
-        ['source/file2.js', 'destination/subdir/file2.js', 0o644],
-        ['source/file3.js', 'destination/subdir/x/file3.js', 0o644],
-        ['source/file4.js', 'destination/subdir/x/file4.js', 0o644],
-    ];
+// list of files to copy
+const srcset = [
+    ['source/file1.js', 'destination/subdir/file1.js', 0o644],
+    ['source/file2.js', 'destination/subdir/file2.js', 0o644],
+    ['source/file3.js', 'destination/subdir/x/file3.js', 0o644],
+    ['source/file4.js', 'destination/subdir/x/file4.js', 0o644],
+];
 
-    // copy files + create destination directories
-    await _fsm.bulkCopy(srcset, true);
+// copy files + create destination directories
+await _fsm.bulkCopy(srcset, true);
 
 ```
 
@@ -90,8 +95,8 @@ Syntax: `mkdirp(directory:string, mode:int=0o777, resursive:boolean=false)`
 Example:
 
 ```js
-    // create directory stucture at once
-    await _fsm.mkdirp('my/custom/dir/1/2/3', 0o777, true);
+// create directory stucture at once
+await _fsm.mkdirp('my/custom/dir/1/2/3', 0o777, true);
 ```
 
 fs-magic::exists
@@ -104,8 +109,80 @@ Syntax: `exists(filedir:string)`
 Example:
 
 ```js
-    // does the file exists ?
-    console.log(await _fsm.exists('myfile.js'));
+// does the file exists ?
+console.log(await _fsm.exists('myfile.js'));
+```
+
+fs-magic::isFile
+---------------------------------
+
+Description: Check if a item is of type file
+
+Syntax: `isFile(filesystemItem:string)`
+
+Example:
+
+```js
+// is a file ?
+console.log(await _fsm.isFile('myfile.js'));
+```
+
+fs-magic::isDirectory
+---------------------------------
+
+Description: Check if a item is of type directory
+
+Syntax: `isDirectory(filesystemItem:string)`
+
+Example:
+
+```js
+// is a directory ?
+console.log(await _fsm.isDirectory('/var/log'));
+```
+
+fs-magic::isSocket
+---------------------------------
+
+Description: Check if a item is of type socket
+
+Syntax: `isSocket(filesystemItem:string)`
+
+Example:
+
+```js
+// is a socket ?
+console.log(await _fsm.isSocket('/var/run/phpfpm.sock'));
+```
+
+fs-magic::isSymlink
+---------------------------------
+
+Description: Check if a item is of type symlink
+
+Syntax: `isSymlink(filesystemItem:string)`
+
+Example:
+
+```js
+// is a symlink ?
+console.log(await _fsm.isSymlink('/etc/motd'));
+```
+
+fs-magic::isFileOfType
+---------------------------------
+
+Description: Check if a item is of specific type
+
+Syntax: `isFileOfType(filename:string, condition:function)`
+
+Example:
+
+```js
+// check if node is socket
+async function isSocket(filename){
+    return await _fsm.isFileOfType(filename, (stats) => stats.isSocket());
+};
 ```
 
 fs-magic::FileInputStream
