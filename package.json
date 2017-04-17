@@ -1,6 +1,6 @@
 {
   "name": "fs-magic",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Advanced Filesystem Utilities and promisified fs base.",
   "keywords": [
     "fs",
@@ -9,7 +9,10 @@
     "copy",
     "await",
     "async",
-    "promise"
+    "promise",
+    "isFile",
+    "isDirectory",
+    "isSymlink"
   ],
   "files": [
     "lib",
