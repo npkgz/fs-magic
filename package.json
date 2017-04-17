@@ -1,0 +1,33 @@
+{
+  "name": "fs-magic",
+  "version": "0.1.0",
+  "description": "Advanced Filesystem Utilities and promisified fs base.",
+  "keywords": [
+    "fs",
+    "mkdir",
+    "utilities",
+    "copy",
+    "await",
+    "async",
+    "promise"
+  ],
+  "files": [
+    "lib",
+    "CHANGED.md",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "main": "fs-magic.js",
+  "bin": {},
+  "preferGlobal": false,
+  "engines": {
+    "node": ">=7.6"
+  },
+  "author": "Andi Dittrich (https://andidittrich.de)",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^1.6.3",
+    "tar-stream": "^1.5.2",
+    "thenify-all": "^1.6.0"
+  }
+}
