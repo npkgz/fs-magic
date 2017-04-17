@@ -26,7 +26,6 @@
   "author": "Andi Dittrich (https://andidittrich.de)",
   "license": "MIT",
   "dependencies": {
-    "node-fetch": "^1.6.3",
     "tar-stream": "^1.5.2",
     "thenify-all": "^1.6.0"
   }
