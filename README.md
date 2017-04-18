@@ -19,6 +19,7 @@ Extensions
 * **copy** Just copy a file (stream based)
 * **bulkCopy** Copy multiple files/directories in once
 * **mkdirp** Create directories recursivly
+* **scandir** List all files + directories of given directory recursivly
 * **exists** Custom `exists` function to test file existence
 * **isFile** Check if item is a file
 * **isDirectory** Check if item is a directory
@@ -96,11 +97,11 @@ const _fsm = require('fs-magic');
 fs-magic::copy
 ---------------------------------
 
-Description: Copy a single file
+**Description:** Copy a single file
 
-Syntax: `copy(sourcefile:string, destinationfile:string, mode:int=null)`
+**Syntax:** `copy(sourcefile:string, destinationfile:string, mode:int=null)`
 
-Example:
+**Example:**
 
 ```js
 // copy a file, set chmod to 0640
@@ -111,11 +112,11 @@ await _fsm.copy('test1.js', 'test2.js', 0o640);
 fs-magic::bulkCopy
 ---------------------------------
 
-Description: Copy multiple files at once
+**Description:** Copy multiple files at once
 
-Syntax: `bulkCopy(srcset:Array, createDestinationDirs:boolean=true, defaultFilemode:int=0o750, defaultDirmode:int=0o777)`
+**Syntax:** `bulkCopy(srcset:Array, createDestinationDirs:boolean=true, defaultFilemode:int=0o750, defaultDirmode:int=0o777)`
 
-Example:
+**Example:**
 
 ```js
 // list of files to copy
@@ -134,25 +135,39 @@ await _fsm.bulkCopy(srcset, true);
 fs-magic::mkdirp
 ---------------------------------
 
-Description: Create a directories recusivly
+**Description:** Create a directories recusivly
 
-Syntax: `mkdirp(directory:string, mode:int=0o777, recursive:boolean=false)`
+**Syntax:** `mkdirp(directory:string, mode:int=0o777, recursive:boolean=false)`
 
-Example:
+**Example:**
 
 ```js
 // create directory stucture at once
 await _fsm.mkdirp('my/custom/dir/1/2/3', 0o777, true);
 ```
 
+fs-magic::scandir
+---------------------------------
+
+**Description:** List all files + directories of given directory recursivly (optional)
+
+**Syntax:** `scandir(directory:string, recursive:boolean=true, absolutePaths:boolean=false)`
+
+**Example:**
+
+```js
+// get file + directory list of all files. Use absolute output paths
+const [files, dirs] = await _fs.scandir('project/modules', true, true);
+```
+
 fs-magic::exists
 ---------------------------------
 
-Description: Check if a file/directory/link exists
+**Description:** Check if a file/directory/link exists
 
-Syntax: `exists(filedir:string)`
+**Syntax:** `exists(filedir:string)`
 
-Example:
+**Example:**
 
 ```js
 // does the file exists ?
@@ -162,11 +177,11 @@ console.log(await _fsm.exists('myfile.js'));
 fs-magic::isFile
 ---------------------------------
 
-Description: Check if a item is of type file
+**Description:** Check if a item is of type file
 
-Syntax: `isFile(filesystemItem:string)`
+**Syntax:** `isFile(filesystemItem:string)`
 
-Example:
+**Example:**
 
 ```js
 // is a file ?
@@ -176,11 +191,11 @@ console.log(await _fsm.isFile('myfile.js'));
 fs-magic::isDirectory
 ---------------------------------
 
-Description: Check if a item is of type directory
+**Description:** Check if a item is of type directory
 
-Syntax: `isDirectory(filesystemItem:string)`
+**Syntax:** `isDirectory(filesystemItem:string)`
 
-Example:
+**Example:**
 
 ```js
 // is a directory ?
@@ -190,11 +205,11 @@ console.log(await _fsm.isDirectory('/var/log'));
 fs-magic::isSocket
 ---------------------------------
 
-Description: Check if a item is of type socket
+**Description:** Check if a item is of type socket
 
-Syntax: `isSocket(filesystemItem:string)`
+**Syntax:** `isSocket(filesystemItem:string)`
 
-Example:
+**Example:**
 
 ```js
 // is a socket ?
@@ -204,11 +219,11 @@ console.log(await _fsm.isSocket('/var/run/phpfpm.sock'));
 fs-magic::isSymlink
 ---------------------------------
 
-Description: Check if a item is of type symlink
+**Description:** Check if a item is of type symlink
 
-Syntax: `isSymlink(filesystemItem:string)`
+**Syntax:** `isSymlink(filesystemItem:string)`
 
-Example:
+**Example:**
 
 ```js
 // is a symlink ?
@@ -218,11 +233,11 @@ console.log(await _fsm.isSymlink('/etc/motd'));
 fs-magic::isFileOfType
 ---------------------------------
 
-Description: Check if a item is of specific type
+**Description:** Check if a item is of specific type
 
-Syntax: `isFileOfType(filename:string, condition:function)`
+**Syntax:** `isFileOfType(filename:string, condition:function)`
 
-Example:
+**Example:**
 
 ```js
 // check if node is socket
@@ -234,11 +249,11 @@ async function isSocket(filename){
 fs-magic::FileInputStream
 ---------------------------------
 
-Description: Open a fileStream for read
+**Description:** Open a fileStream for read
 
-Syntax: `FileInputStream(sourcefile:string)`
+**Syntax:** `FileInputStream(sourcefile:string)`
 
-Example:
+**Example:**
 
 ```js
 const _fsm = require('fs-magic');
@@ -256,11 +271,11 @@ async function copy(src, dst, mode=null){
 fs-magic::FileOutputStream
 ---------------------------------
 
-Description: Writes given stream into file
+**Description:** Writes given stream into file
 
-Syntax: `FileOutputStream(readstream:stream, destinationFilename:string, mode:int=false)`
+**Syntax:** `FileOutputStream(readstream:stream, destinationFilename:string, mode:int=false)`
 
-Example:
+**Example:**
 
 ```js
 const _fsm = require('fs-magic');
@@ -276,11 +291,11 @@ await _fsm.FileOutputStream(response.body, dst, mode);
 fs-magic::untar
 ---------------------------------
 
-Description: Extracts contents of a `.tar` archive into given directory using **tar-stream**
+**Description:** Extracts contents of a `.tar` archive into given directory using **tar-stream**
 
-Syntax: `untar(inputstream:stream, destinationDirectory:string)`
+**Syntax:** `untar(inputstream:stream, destinationDirectory:string)`
 
-Example:
+**Example:**
 
 ```js
 const _fetch = require('node-fetch');
@@ -296,11 +311,11 @@ let items = await _fsm.untar(response.body, '.');
 fs-magic::untgz
 ---------------------------------
 
-Description: Extracts contents of a gzip compressed `.tar.gz` archive into given directory using **tar-stream**
+**Description:** Extracts contents of a gzip compressed `.tar.gz` archive into given directory using **tar-stream**
 
-Syntax: `untgz(inputstream:stream, destinationDirectory:string)`
+**Syntax:** `untgz(inputstream:stream, destinationDirectory:string)`
 
-Example:
+**Example:**
 
 ```js
 const _fetch = require('node-fetch');
