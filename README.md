@@ -92,7 +92,7 @@ fs-magic::mkdirp
 
 Description: Create a directories recusivly
 
-Syntax: `mkdirp(directory:string, mode:int=0o777, resursive:boolean=false)`
+Syntax: `mkdirp(directory:string, mode:int=0o777, recursive:boolean=false)`
 
 Example:
 
