@@ -20,6 +20,7 @@ Extensions
 * **bulkCopy** Copy multiple files/directories in once
 * **mkdirp** Create directories recursivly
 * **scandir** List all files + directories of given directory recursivly
+* **rmrf** Removes all files of a given directory recursivly
 * **exists** Custom `exists` function to test file existence
 * **isFile** Check if item is a file
 * **isDirectory** Check if item is a directory
@@ -158,6 +159,22 @@ fs-magic::scandir
 ```js
 // get file + directory list of all files. Use absolute output paths
 const [files, dirs] = await _fs.scandir('project/modules', true, true);
+```
+
+fs-magic::rmrf
+---------------------------------
+
+**Description:** Removes all files of a given directory recursivly
+
+**Syntax:** `rmrf(directory:string)`
+
+**Note:** For security reasons, this function **does not** accept the file system root `/` or a directory within it like `/etc` as input 
+
+**Example:**
+
+```js
+// remove a project folder
+await _fs.rmrf('projects/js1');
 ```
 
 fs-magic::exists

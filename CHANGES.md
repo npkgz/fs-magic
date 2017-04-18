@@ -1,6 +1,6 @@
 ### 1.4.0 ###
 * Added: `scandir` function to list all files+directories of a given directory (recursive)
-
+* Added: `rmrf` function to recursive remove directories/files
 
 ### 1.3.1 ###
 * Bugfix: `bulkCopy` failed because of missing `path` dependency
