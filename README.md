@@ -11,7 +11,7 @@ Features
 * Lot of extended functions are added
 * Targeted to use with most modern Node.js version which supports `await` and `async function` nativly
 * No backward compatibility layer
-* OS Support for `linux` and `osx` - Windows is currently not support
+* OS Support for `linux` and `osx` - Windows is currently not supported
 
 Extensions
 ------------------------------
@@ -306,7 +306,7 @@ Example:
 const _fetch = require('node-fetch');
 
 // fetch remote content
-const response = _fetch('http://example.org/file.tar.gz');
+const response = await _fetch('http://example.org/file.tar.gz');
 
 // unpack into currrent directory
 let items = await _fsm.untgz(response.body, '.');
