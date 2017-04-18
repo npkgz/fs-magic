@@ -1,14 +1,17 @@
 fs-magic
 =========================
 
-An extended, promisified **fs** drop-in-replacement for Node.js **>=7.6**
+An extended, promisified `fs` drop-in-replacement for Node.js **>=7.6**
 
 Features
 ------------------------------
 
+* Designed to run with the pure power of native `Promise`, `await` and `async function`
 * All asynchronous **fs** functions are proxied by **thenify-all** and converted into promises
 * Lot of extended functions are added
-* Targeted to use with modern Node.js version which supports `await` and `async function` nativly
+* Targeted to use with most modern Node.js version which supports `await` and `async function` nativly
+* No backward compatibility layer
+* OS Support for `linux` and `osx` - Windows is currently not support
 
 Extensions
 ------------------------------
@@ -27,6 +30,44 @@ Extensions
 * **untar** Extracting `.tar` archives using **tar-stream**
 * **untgz** Extracting gzip compressed `.tar` archives
 
+Promisified FS API
+------------------------------
+
+The following asynchronous `fs` methods are promisified and exposed within the `fs-magic` object. All synchronous functions are ignored because there is no need for them anymore - use `await`!
+
+* **access**
+* **appendFile**
+* **chmod**
+* **chown**
+* **close**
+* **fchmod**
+* **fchown**
+* **fdatasync**
+* **fstat**
+* **fsync**
+* **ftruncate**
+* **futimes**
+* **lchown**
+* **link**
+* **lstat**
+* **mkdir**
+* **mkdtemp**
+* **open**
+* **read**
+* **readFile**
+* **readdir**
+* **readlink**
+* **realpath**
+* **rename**
+* **rmdir**
+* **stat**
+* **symlink**
+* **truncate**
+* **unlink**
+* **utimes**
+* **write**
+* **writeFile**
+
 General Usage
 ------------------------------
 
@@ -35,6 +76,9 @@ const _fsm = require('fs-magic');
 
 // wraper 
 (async function(){
+    // get stats
+    const stats= await _fsm.fstat('myfile.js');
+
     // does the file exists ?
     console.log(await _fsm.exists('myfile.js'));
 
@@ -197,16 +241,15 @@ Syntax: `FileInputStream(sourcefile:string)`
 Example:
 
 ```js
-const _fOutoutStream = require('./FileOutputStream');
-const _fInputStream = require('./FileInputStream');
+const _fsm = require('fs-magic');
 
 // copy source file to destination (override it)
 async function copy(src, dst, mode=null){
     // open file input stream
-    const istream = await _fInputStream(src);
+    const istream = await _fsm.FileOutputStream(src);
 
     // write stream content to file
-    return _fOutoutStream(istream, dst, mode);
+    return _fsm.FileOutputStream(istream, dst, mode);
 }
 ```
 
@@ -220,14 +263,14 @@ Syntax: `FileOutputStream(readstream:stream, destinationFilename:string, mode:in
 Example:
 
 ```js
-const _fOutoutStream = require('./FileOutputStream');
+const _fsm = require('fs-magic');
 const _fetch = require('node-fetch');
 
 // fetch remote content
-const response = _fetch('http://example.org/file.gz');
+const response = await _fetch('http://example.org/file.gz');
 
 // write stream content to file
-await _fOutoutStream(response.body, dst, mode);
+await _fsm.FileOutputStream(response.body, dst, mode);
 ```
 
 fs-magic::untar
@@ -241,9 +284,10 @@ Example:
 
 ```js
 const _fetch = require('node-fetch');
+const _fsm = require('fs-magic');
 
 // fetch remote content
-const response = _fetch('http://example.org/file.tar');
+const response = await _fetch('http://example.org/file.tar');
 
 // unpack into currrent directory
 let items = await _fsm.untar(response.body, '.');
