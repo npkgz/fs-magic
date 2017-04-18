@@ -1,3 +1,9 @@
+### 1.3.1 ###
+* Bugfix: `bulkCopy` failed because of missing `path` dependency
+
+### 1.3.0 ###
+* Added: Windows support
+
 ### 1.2.0 ###
 * Added: `untar`, `untgz` functions to extract files from **tarballs**
 
