@@ -1,7 +1,7 @@
 fs-magic
 =========================
 
-An extended, promisified `fs` drop-in-replacement for Node.js **>=7.6**
+An extended, promisified **fs** drop-in-replacement for Node.js **>=7.6**
 
 Features
 ------------------------------
@@ -11,7 +11,7 @@ Features
 * Lot of extended functions are added
 * Targeted to use with most modern Node.js version which supports `await` and `async function` nativly
 * No backward compatibility layer
-* OS Support for `linux` and `osx` - Windows is currently not supported
+* OS Support for POSIX and Win Platforms (as of v1.3.0)
 
 Extensions
 ------------------------------
