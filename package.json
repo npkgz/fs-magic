@@ -23,7 +23,9 @@
     "isDirectory",
     "isSymlink",
     "untar",
-    "untgz"
+    "untgz",
+    "gzip",
+    "ungzip"
   ],
   "files": [
     "lib",
