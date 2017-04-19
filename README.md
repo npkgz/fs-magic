@@ -12,6 +12,7 @@ Features
 * Targeted to use with most modern Node.js version which supports `await` and `async function` nativly
 * No backward compatibility layer
 * OS Support for POSIX and Win Platforms (as of v1.3.0)
+* Streams, Streams, Streams - all file operations are stream-based!
 
 Extensions
 ------------------------------
@@ -31,6 +32,8 @@ Extensions
 * **FileOutputStream** Write stream to destination file
 * **untar** Extracting `.tar` archives using **tar-stream**
 * **untgz** Extracting gzip compressed `.tar` archives
+* **gzip** Compress a file
+* **gunzip** Decompress a file
 
 Promisified FS API
 ------------------------------
@@ -342,6 +345,42 @@ const response = await _fetch('http://example.org/file.tar.gz');
 
 // unpack into currrent directory
 let items = await _fsm.untgz(response.body, '.');
+```
+
+fs-magic::gzip
+---------------------------------
+
+**Description:** Compresses a file
+
+**Syntax:** `gzip(input:{string, stream}, destinationFilename:string)`
+
+**Example:**
+
+```js
+// compress a file
+await _fsm.gzip('./file.txt', './file.gz');
+```
+
+fs-magic::gunzip
+---------------------------------
+
+**Description:** Decompresses a file
+
+**Syntax:** `gunzip(input:{string, stream}, destinationFilename:string)`
+
+**Example:**
+
+```js
+// decompress a file
+await _fsm.gunzip('./file.gz', './my-file.txt');
+```
+
+```js
+// fetch content
+const response = await _fetch('http://example.org/file.gz');
+
+// decompress a stream
+await _fsm.gunzip(response.body, './file.txt');
 ```
 
 Any Questions ? Report a Bug ? Enhancements ?

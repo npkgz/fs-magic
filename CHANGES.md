@@ -1,3 +1,7 @@
+### 1.5.0 ###
+* Added: `gzip` function to compress a single file
+* Added: `gunzip` function to decompress a single file
+
 ### 1.4.0 ###
 * Added: `scandir` function to list all files+directories of a given directory (recursive)
 * Added: `rmrf` function to recursive remove directories/files

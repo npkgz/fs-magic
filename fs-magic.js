@@ -17,5 +17,7 @@ _fs.isSymlink = require('./lib/isSymlink');
 _fs.isFileOfType = require('./lib/isFileOfType');
 _fs.untar = require('./lib/untar');
 _fs.untgz = require('./lib/untgz');
+_fs.gzip = require('./lib/gzip');
+_fs.gunzip = require('./lib/gunzip');
 
 module.exports = _fs;
