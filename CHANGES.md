@@ -1,3 +1,6 @@
+### 1.6.0 ###
+* Added: File Checksum functions `md5file`, `sha1file`, `sha256file`, `sha512file`
+
 ### 1.5.0 ###
 * Added: `gzip` function to compress a single file
 * Added: `gunzip` function to decompress a single file

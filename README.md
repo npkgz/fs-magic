@@ -34,6 +34,12 @@ Extensions
 * **untgz** Extracting gzip compressed `.tar` archives
 * **gzip** Compress a file
 * **gunzip** Decompress a file
+* **sha1file** SHA1 File Checksum
+* **sha256file** SHA256 File Checksum
+* **sha384file** SHA384 File Checksum
+* **sha512file** SHA512 File Checksum
+* **md5file** MD5 File Checksum
+* **checksum** Generic File Checksum
 
 Promisified FS API
 ------------------------------
@@ -381,6 +387,76 @@ const response = await _fetch('http://example.org/file.gz');
 
 // decompress a stream
 await _fsm.gunzip(response.body, './file.txt');
+```
+
+fs-magic::checksum
+---------------------------------
+
+**Description:** Generic File Checksum
+
+**Syntax:** `checksum(filename:string, algorithm:string='sha256', outputFormat:string='hex')`
+
+**Example:**
+
+```js
+// sha384 checksum as base64
+const sum = await _fsm.checksum('./file.txt', 'sha384', 'base64');
+```
+
+fs-magic::sha1file
+---------------------------------
+
+**Description:** SHA1 File Checksum
+
+**Syntax:** `sha1file(filename:string, outputFormat:string='hex')`
+
+**Example:**
+
+```js
+// sha1 checksum as hex
+const sum = await _fsm.sha1file('./file.txt');
+```
+
+fs-magic::sha256file
+---------------------------------
+
+**Description:** SHA256 File Checksum
+
+**Syntax:** `sha256file(filename:string, outputFormat:string='hex')`
+
+**Example:**
+
+```js
+// sha256 checksum as hex
+const sum = await _fsm.sha256file('./file.txt');
+```
+
+fs-magic::sha384file
+---------------------------------
+
+**Description:** SHA384 File Checksum
+
+**Syntax:** `sha384file(filename:string, outputFormat:string='hex')`
+
+**Example:**
+
+```js
+// sha384 checksum as buffer
+const sum = await _fsm.sha384file('./file.txt', 'raw');
+```
+
+fs-magic::sha512file
+---------------------------------
+
+**Description:** SHA512 File Checksum
+
+**Syntax:** `sha512file(filename:string, outputFormat:string='hex')`
+
+**Example:**
+
+```js
+// sha512 checksum as base64
+const sum = await _fsm.sha512file('./file.txt', 'base64');
 ```
 
 Any Questions ? Report a Bug ? Enhancements ?

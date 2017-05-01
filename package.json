@@ -1,6 +1,6 @@
 {
   "name": "fs-magic",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "author": "Andi Dittrich (https://andidittrich.de)",
   "license": "MIT",
   "homepage": "https://github.com/AndiDittrich/Node.fs-magic",
@@ -25,7 +25,10 @@
     "untar",
     "untgz",
     "gzip",
-    "ungzip"
+    "ungzip",
+    "sha256file",
+    "sha512file",
+    "sha1file"
   ],
   "files": [
     "lib",
