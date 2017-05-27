@@ -1,3 +1,6 @@
+### 2.0.0 ###
+* Replaced: **thenify-all** with **async-magic**
+
 ### 1.6.0 ###
 * Added: File Checksum functions `md5file`, `sha1file`, `sha256file`, `sha512file`
 

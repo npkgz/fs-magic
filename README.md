@@ -7,7 +7,7 @@ Features
 ------------------------------
 
 * Designed to run with the pure power of native `Promise`, `await` and `async function`
-* All asynchronous **fs** functions are proxied by **thenify-all** and converted into promises
+* All asynchronous **fs** functions are and converted into promises with **async-magic**
 * Lot of extended functions are added
 * Targeted to use with most modern Node.js version which supports `await` and `async function` nativly
 * No backward compatibility layer
