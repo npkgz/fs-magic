@@ -1,3 +1,6 @@
+### 2.0.1 ###
+* Bugfix: Function like `isDirectory` thrown an exception in case the file/node don't exists - thanks to [lingmm on GitHub](https://github.com/AndiDittrich/Node.fs-magic/issues/1) #1
+
 ### 2.0.0 ###
 * Replaced: **thenify-all** with **async-magic**
 
