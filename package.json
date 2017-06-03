@@ -1,6 +1,6 @@
 {
   "name": "fs-magic",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "author": "Andi Dittrich (https://andidittrich.de)",
   "license": "MIT",
   "homepage": "https://github.com/AndiDittrich/Node.fs-magic",
@@ -43,7 +43,7 @@
     "node": ">=7.6"
   },
   "dependencies": {
-    "async-magic": "^1.1.0",
+    "async-magic": "^2.0.0",
     "tar-stream": "^1.5.2"
   },
   "devDependencies": {

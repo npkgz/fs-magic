@@ -1,3 +1,7 @@
+### 2.0.2 ###
+* Added: Limited the number of parallel copy tasks (100) of `bulkCopy`
+* Bugfix: Uninitialized variable within `FileInputStream` caused invalid file handle on parallel operation
+
 ### 2.0.1 ###
 * Bugfix: Function like `isDirectory` thrown an exception in case the file/node don't exists - thanks to [lingmm on GitHub](https://github.com/AndiDittrich/Node.fs-magic/issues/1) #1
 

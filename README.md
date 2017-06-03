@@ -6,10 +6,9 @@ An extended, promisified **fs** drop-in-replacement for Node.js **>=7.6**
 Features
 ------------------------------
 
-* Designed to run with the pure power of native `Promise`, `await` and `async function`
 * All asynchronous **fs** functions are and converted into promises with **async-magic**
 * Lot of extended functions are added
-* Targeted to use with most modern Node.js version which supports `await` and `async function` nativly
+* Designed to run with the pure power of native `Promise`, `await` and `async function`
 * No backward compatibility layer
 * OS Support for POSIX and Win Platforms (as of v1.3.0)
 * Streams, Streams, Streams - all file operations are stream-based!
