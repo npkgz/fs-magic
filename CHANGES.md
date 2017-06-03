@@ -1,3 +1,6 @@
+### 2.0.3 ###
+* Bugfix: Wrong version of async-magic within package.json
+
 ### 2.0.2 ###
 * Added: Limited the number of parallel copy tasks (100) of `bulkCopy`
 * Bugfix: Uninitialized variable within `FileInputStream` caused invalid file handle on parallel operation

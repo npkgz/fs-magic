@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-async-magic@^1.1.0:
+async-magic@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/async-magic/-/async-magic-1.2.1.tgz#4d4e81f867316f77e132882b22d2d7fdfa43ef77"
 
