@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/AndiDittrich/Node.fs-magic.svg?branch=master)](https://travis-ci.org/AndiDittrich/Node.fs-magic)
+
 fs-magic
 =========================
 

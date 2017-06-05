@@ -1,12 +1,12 @@
 {
   "name": "fs-magic",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "author": "Andi Dittrich (https://andidittrich.de)",
   "license": "MIT",
   "homepage": "https://github.com/AndiDittrich/Node.fs-magic",
   "bugs": "https://github.com/AndiDittrich/Node.fs-magic/issues",
   "repository": "AndiDittrich/Node.fs-magic",
-  "description": "Advanced Filesystem Utilities and promisified fs base.",
+  "description": "An extended, promisified fs drop-in-replacement for Node.js >=7.6",
   "keywords": [
     "fs",
     "mkdir",
@@ -47,6 +47,10 @@
     "tar-stream": "^1.5.2"
   },
   "devDependencies": {
+    "mocha": "^3.4.2",
     "node-fetch": "^1.6.3"
+  },
+  "scripts": {
+    "test": "mocha"
   }
 }

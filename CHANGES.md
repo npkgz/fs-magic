@@ -1,3 +1,7 @@
+### 2.1.0 ###
+* Added: mocha based testcases
+* Added travisci integration
+
 ### 2.0.3 ###
 * Bugfix: Wrong version of async-magic within package.json
 
