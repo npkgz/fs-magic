@@ -1,6 +1,7 @@
 ### 2.1.0 ###
 * Added: mocha based testcases
 * Added travisci integration
+* Bugfix: Function `isSymlink` thrown an exception in case the file/node don't exists / see #1
 
 ### 2.0.3 ###
 * Bugfix: Wrong version of async-magic within package.json
