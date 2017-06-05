@@ -1,0 +1,18 @@
+{
+    "hex": {
+        "md5": "fe92e0f7d740e0d9307621189771edb3",
+        "sha1": "8bce0f95e7e4e0daf002d661b23c36c6dccb7f68",
+        "sha256": "f7cabf9a28b0e200533f192805fffbe6810cb7e772b60cdf641a121edfbc7b93",
+        "sha384": "11b672b570b8b13bb26bc30a01118095abea54d3b6a15356df18804e8d5358a3fc0926e64e6400ad9496b54e7ef72727",
+        "sha512": "ccdd8ef03d31e7e41c7069d50d7373db99aa6dfeecaca78614e7fd80bec1df7ce665ea84ede39fa7dcc0da3cce64cca15ffa4a99b23eca65612b9e3456a01162",
+        "whirlpool": "84ca4c6bde1c1fc191c9530e239efc4b3ae7052f2d5365c2c0040a607e363efe51da460daafe2ad4807332fdfc6af0d5f1c3b3be274c9dfb05780d9d8c9265e2"
+    },
+    "base64": {
+        "md5": "/pLg99dA4NkwdiEYl3Htsw==",
+        "sha1": "i84Plefk4NrwAtZhsjw2xtzLf2g=",
+        "sha256": "98q/miiw4gBTPxkoBf/75oEMt+dytgzfZBoSHt+8e5M=",
+        "sha384": "EbZytXC4sTuya8MKARGAlavqVNO2oVNW3xiATo1TWKP8CSbmTmQArZSWtU5+9ycn",
+        "sha512": "zN2O8D0x5+QccGnVDXNz25mqbf7srKeGFOf9gL7B33zmZeqE7eOfp9zA2jzOZMyhX/pKmbI+ymVhK540VqARYg==",
+        "whirlpool": "hMpMa94cH8GRyVMOI578SzrnBS8tU2XCwAQKYH42Pv5R2kYNqv4q1IBzMv38avDV8cOzvidMnfsFeA2djJJl4g=="
+    }
+}
