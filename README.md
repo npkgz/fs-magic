@@ -15,7 +15,7 @@ Features
 * OS Support for POSIX and Win Platforms (as of v1.3.0)
 * Streams, Streams, Streams - all file operations are stream-based!
 
-Extensions
+Addons
 ------------------------------
 
 * **copy** Just copy a file (stream based)
@@ -41,6 +41,7 @@ Extensions
 * **sha512file** SHA512 File Checksum
 * **md5file** MD5 File Checksum
 * **checksum** Generic File Checksum
+* **statx** Silent stat (returns false in case of ENOENT)
 
 Promisified FS API
 ------------------------------
@@ -458,6 +459,24 @@ fs-magic::sha512file
 ```js
 // sha512 checksum as base64
 const sum = await _fsm.sha512file('./file.txt', 'base64');
+```
+
+fs-magic::statx
+---------------------------------
+
+**Description:** Extended `stat` function. The function retuns **false** in case of ENOENT error (file not found)
+
+**Syntax:** `statx(filesystemItem:string)`
+
+**Example:**
+
+```js
+// get file stats ?
+const stats = await _fsm.statx('/var/log/unknown_file.log');
+
+if (stats !== false){
+    console.log(stats);
+}
 ```
 
 Any Questions ? Report a Bug ? Enhancements ?

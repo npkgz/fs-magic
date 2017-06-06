@@ -25,5 +25,6 @@ _fs.sha1file = require('./lib/sha1file');
 _fs.sha256file = require('./lib/sha256file');
 _fs.sha384file = require('./lib/sha384file');
 _fs.sha512file = require('./lib/sha512file');
+_fs.statx = require('./lib/statx');
 
 module.exports = _fs;
