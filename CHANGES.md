@@ -1,3 +1,6 @@
+### 2.1.2 ###
+* Bugfix: fixed travis.yml node version
+
 ### 2.1.1 ###
 * Bugfix: Fixed `stat` key testcases (node v8 compatibilty)
 * Bugfix: `fs.createReadStream` was overwritten by `createWriteStream` (typo)
