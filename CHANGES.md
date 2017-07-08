@@ -1,3 +1,8 @@
+### 2.1.1 ###
+* Bugfix: Fixed `stat` key testcases (node v8 compatibilty)
+* Bugfix: `fs.createReadStream` was overwritten by `createWriteStream` (typo)
+* Bugfix: `fs.createWriteStream` was not exposed
+
 ### 2.1.0 ###
 * Added: mocha based testcases
 * Added travisci integration
