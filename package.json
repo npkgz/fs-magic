@@ -1,11 +1,11 @@
 {
   "name": "fs-magic",
-  "version": "2.1.2",
-  "author": "Andi Dittrich (https://andidittrich.de)",
+  "version": "2.1.3",
+  "author": "Andi Dittrich (https://andidittrich.com)",
   "license": "MIT",
-  "homepage": "https://github.com/AndiDittrich/Node.fs-magic",
-  "bugs": "https://github.com/AndiDittrich/Node.fs-magic/issues",
-  "repository": "AndiDittrich/Node.fs-magic",
+  "homepage": "https://github.com/npkgz/fs-magic",
+  "bugs": "https://github.com/npkgz/fs-magic/issues",
+  "repository": "npkgz/fs-magic",
   "description": "An extended, promisified fs drop-in-replacement for Node.js >=7.6",
   "keywords": [
     "fs",
@@ -44,13 +44,13 @@
   },
   "dependencies": {
     "async-magic": "^1.2.1",
-    "tar-stream": "^1.5.2"
+    "tar-stream": "^2.2.0"
   },
   "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-config-aenondynamics": "^0.1.0",
-    "mocha": "^3.4.2",
-    "node-fetch": "^1.6.3"
+    "eslint": "^7.27.0",
+    "eslint-config-aenondynamics": "^0.2.0",
+    "mocha": "^8.4.0",
+    "node-fetch": "^2.6.1"
   },
   "scripts": {
     "test": "eslint lib/**.js; mocha"

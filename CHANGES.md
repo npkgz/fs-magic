@@ -1,3 +1,8 @@
+### 2.1.3 ###
+
+* Changed: bumped all deps to latest
+* Bugfix: Promise executor function `checksum.js` was async
+
 ### 2.1.2 ###
 * Bugfix: fixed travis.yml node version
 
