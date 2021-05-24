@@ -50,7 +50,7 @@
     "eslint": "^3.19.0",
     "eslint-config-aenondynamics": "^0.1.0",
     "mocha": "^3.4.2",
-    "node-fetch": "^1.6.3"
+    "node-fetch": "^2.6.1"
   },
   "scripts": {
     "test": "eslint lib/**.js; mocha"
